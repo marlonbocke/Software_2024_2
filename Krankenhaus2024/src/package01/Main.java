@@ -28,9 +28,9 @@ public class Main {
 }
 
 class DatabaseManager {
-    private static final String DB_URL = "jdbc:mysql://localhost:3306/password.sql";
-    private static final String DB_USER = "your_username";
-    private static final String DB_PASSWORD = "your_password";
+    private static final String DB_URL = "jdbc:mysql://marlonbockelmann.ddns.net:3306/password";
+    private static final String DB_USER = "Besh";
+    private static final String DB_PASSWORD = "j8e)t7J8jY_1xCoA";
 
     public static Connection getConnection() throws SQLException {
         return DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
