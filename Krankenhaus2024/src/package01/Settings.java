@@ -39,7 +39,8 @@ public class Settings {
 	public Settings() {
 		initialize();
 	}
-
+	
+	
 	/**
 	 * Initialize the contents of the frame.
 	 */
