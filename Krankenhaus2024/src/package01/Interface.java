@@ -141,8 +141,8 @@ public class Interface {
 
         
 
-        for (int i = 0; i < coordinates.length; i++) {
-            System.out.println("Koordinate " + (i + 1) + ": (x = " + coordinates[i][0] + ", y = " + coordinates[i][1] + ")");
-        }
+//        for (int i = 0; i < coordinates.length; i++) {
+//            System.out.println("Koordinate " + (i + 1) + ": (x = " + coordinates[i][0] + ", y = " + coordinates[i][1] + ")");
+//        }
     }
 }
