@@ -112,16 +112,16 @@ public class Interface {
 
     public void calulate() {
 
-    	int[][] coordinates_range = new int[15][2];
+    	int[][] coordinates_range = new int[100][2];
 
-        coordinates_range[0][0] = 1; 
-        coordinates_range[0][1] = 1; 
-        coordinates_range[1][0] = 1; 
+        coordinates_range[0][0] = 0; 
+        coordinates_range[0][1] = 0; 
+        coordinates_range[1][0] = 0; 
         coordinates_range[1][1] = 276; 
 
         
         
-        coordinates_range[2][0] = 1; 
+        coordinates_range[2][0] = 0; 
         coordinates_range[2][1] = 276; 
         coordinates_range[3][0] = 188; 
         coordinates_range[3][1] = 276; 
@@ -134,12 +134,123 @@ public class Interface {
         coordinates_range[5][1] = 458; 
 
         
-        coordinates_range[6][0] = 188; 
-        coordinates_range[6][1] = 458; 
+        coordinates_range[6][0] = 188; //X
+        coordinates_range[6][1] = 458; //Y 
         coordinates_range[7][0] = 497; 
         coordinates_range[7][1] = 458; 
 
         
+        coordinates_range[8][0] = 497; 
+        coordinates_range[8][1] = 458; 
+        coordinates_range[9][0] = 497; 
+        coordinates_range[9][1] = 276; 
+	
+        
+        coordinates_range[10][0] = 497; 
+       	coordinates_range[10][1] = 276; 
+       	coordinates_range[11][0] = 641; 
+       	coordinates_range[11][1] = 276;
+       	
+       	
+       	coordinates_range[12][0] = 641; 
+       	coordinates_range[12][1] = 276;
+       	coordinates_range[13][0] = 641; 
+       	coordinates_range[13][1] = 0;
+       	
+       	coordinates_range[14][0] = 641; 
+       	coordinates_range[15][1] = 0;
+       	coordinates_range[16][0] = 379; 
+       	coordinates_range[16][1] = 0;
+       	
+       	coordinates_range[16][0] = 379; 
+       	coordinates_range[16][1] = 0;
+       	coordinates_range[17][0] = 163; 
+       	coordinates_range[17][1] = 379;
+	
+    
+       	coordinates_range[16][0] = 379; 
+       	coordinates_range[16][1] = 0;
+       	coordinates_range[17][0] = 379; 
+       	coordinates_range[17][1] = 163;
+	
+       	
+    	coordinates_range[18][0] = 379; 
+       	coordinates_range[18][1] = 163;
+       	coordinates_range[19][0] = 269; 
+       	coordinates_range[19][1] = 163;
+       	
+       	
+    	coordinates_range[20][0] = 269; 
+       	coordinates_range[20][1] = 163;
+       	coordinates_range[21][0] = 269; 
+       	coordinates_range[21][1] = 0;
+       	
+       	
+       	coordinates_range[22][0] = 269; 
+       	coordinates_range[22][1] = 0;
+       	coordinates_range[23][0] = 0; 
+       	coordinates_range[23][1] = 0;
+       	
+       	//------------------------------------------------------------^^out_walls
+       	
+       	
+    	coordinates_range[24][0] = 10; 
+       	coordinates_range[24][1] = 0;
+       	coordinates_range[25][0] = 10; 
+       	coordinates_range[25][1] = 297;
+       	
+       	
+     	coordinates_range[26][0] = 64; 
+       	coordinates_range[26][1] = 61;
+       	coordinates_range[27][0] = 64; 
+       	coordinates_range[27][1] = 264;
+       	
+       	
+       	coordinates_range[28][0] = 80; 
+       	coordinates_range[28][1] = 61;
+       	coordinates_range[29][0] = 80; 
+       	coordinates_range[29][1] = 222;
+       	
+        
+       	coordinates_range[30][0] = 80; 
+       	coordinates_range[30][1] = 61;
+       	coordinates_range[31][0] = 80; 
+       	coordinates_range[31][1] = 222;
+       
+       	
+    	coordinates_range[32][0] = 80; 
+       	coordinates_range[32][1] = 61;
+       	coordinates_range[33][0] = 199; 
+       	coordinates_range[33][1] = 61;
+       
+        
+     	coordinates_range[34][0] = 196; 
+       	coordinates_range[34][1] = 61;
+       	coordinates_range[35][0] = 196; 
+       	coordinates_range[35][1] = 222;
+       
+       	
+       	coordinates_range[36][0] = 214; 
+       	coordinates_range[36][1] = 222;
+       	coordinates_range[37][0] = 214; 
+       	coordinates_range[37][1] = 222;
+       
+        
+        
+        
+        
+       	
+       	
+       	
+       	
+       	
+       	
+       	
+       	
+       	
+       	
+       	//----------------------------------^^define corridors
+       	
 
 //        for (int i = 0; i < coordinates.length; i++) {
 //            System.out.println("Koordinate " + (i + 1) + ": (x = " + coordinates[i][0] + ", y = " + coordinates[i][1] + ")");
