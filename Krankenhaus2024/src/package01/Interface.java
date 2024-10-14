@@ -111,18 +111,35 @@ public class Interface {
     }
 
     public void calulate() {
-        int[][] coordinates = new int[5][2];
 
-        coordinates[0][0] = 10;
-        coordinates[0][1] = 20;
-        coordinates[1][0] = 30;
-        coordinates[1][1] = 40;
-        coordinates[2][0] = 50;
-        coordinates[2][1] = 60;
-        coordinates[3][0] = 70;
-        coordinates[3][1] = 80;
-        coordinates[4][0] = 90;
-        coordinates[4][1] = 100;
+    	int[][] coordinates_range = new int[15][2];
+
+        coordinates_range[0][0] = 1; 
+        coordinates_range[0][1] = 1; 
+        coordinates_range[1][0] = 1; 
+        coordinates_range[1][1] = 276; 
+
+        
+        
+        coordinates_range[2][0] = 1; 
+        coordinates_range[2][1] = 276; 
+        coordinates_range[3][0] = 188; 
+        coordinates_range[3][1] = 276; 
+
+
+        
+        coordinates_range[4][0] = 188; 
+        coordinates_range[4][1] = 276; 
+        coordinates_range[5][0] = 188; 
+        coordinates_range[5][1] = 458; 
+
+        
+        coordinates_range[6][0] = 188; 
+        coordinates_range[6][1] = 458; 
+        coordinates_range[7][0] = 497; 
+        coordinates_range[7][1] = 458; 
+
+        
 
         for (int i = 0; i < coordinates.length; i++) {
             System.out.println("Koordinate " + (i + 1) + ": (x = " + coordinates[i][0] + ", y = " + coordinates[i][1] + ")");
