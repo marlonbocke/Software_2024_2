@@ -191,7 +191,7 @@ public class Interface {
        	coordinates_range[23][0] = 0; 
        	coordinates_range[23][1] = 0;
        	
-       	//------------------------------------------------------------^^out_walls
+       	//------------------------------------------------------------^^ define out_walls
        	
        	
     	coordinates_range[24][0] = 10; 
@@ -318,17 +318,6 @@ public class Interface {
        	coordinates_range[64][1] = 59;
        	coordinates_range[65][0] = 585; 
        	coordinates_range[65][1] = 221;
-       	
-       	       	
-       	
-       	
-       	
-       	
-       	
-       	
-       	
-       	
-       	
        	
        	
        	//----------------------------------^^define corridors
