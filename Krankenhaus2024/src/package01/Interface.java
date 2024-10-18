@@ -112,7 +112,7 @@ public class Interface {
 
     public void calulate() {
 
-    	int[][] coordinates_range = new int[100][2];
+    	int[][] coordinates_range = new int[65][2];
 
         coordinates_range[0][0] = 0; 
         coordinates_range[0][1] = 0; 
@@ -236,9 +236,91 @@ public class Interface {
        	coordinates_range[37][1] = 222;
        
         
+    	coordinates_range[38][0] = 65; 
+       	coordinates_range[38][1] = 238;
+       	coordinates_range[39][0] = 584; 
+       	coordinates_range[39][1] = 238;
+       
+       	
+       	coordinates_range[40][0] = 65; 
+       	coordinates_range[40][1] = 218;
+       	coordinates_range[41][0] = 584; 
+       	coordinates_range[41][1] = 218;
         
         
+       	coordinates_range[42][0] = 246; 
+       	coordinates_range[42][1] = 238;
+       	coordinates_range[43][0] = 246; 
+       	coordinates_range[43][1] = 293;
         
+       	
+       	coordinates_range[44][0] = 269; 
+       	coordinates_range[44][1] = 238;
+       	coordinates_range[45][0] = 269; 
+       	coordinates_range[45][1] = 293;
+        
+       	
+       	coordinates_range[46][0] = 190; 
+       	coordinates_range[46][1] = 409;
+       	coordinates_range[47][0] = 493; 
+       	coordinates_range[47][1] = 409 ;
+        
+       	
+       	coordinates_range[48][0] = 190; 
+       	coordinates_range[48][1] = 391;
+       	coordinates_range[49][0] = 190; 
+       	coordinates_range[49][1] = 391;
+        
+       	
+     	coordinates_range[50][0] = 429; 
+       	coordinates_range[50][1] = 238;
+       	coordinates_range[51][0] = 429; 
+       	coordinates_range[51][1] = 408;
+       	
+       	
+       	coordinates_range[52][0] = 443; 
+       	coordinates_range[52][1] = 238;
+       	coordinates_range[53][0] = 443; 
+       	coordinates_range[53][1] = 408;
+       	
+       	
+       	coordinates_range[54][0] = 434; 
+       	coordinates_range[54][1] = 216;
+       	coordinates_range[55][0] = 434; 
+       	coordinates_range[55][1] = 41;
+       	
+       	
+       	coordinates_range[56][0] = 450; 
+       	coordinates_range[56][1] = 216;
+       	coordinates_range[57][0] = 450; 
+       	coordinates_range[57][1] = 41;
+       	
+       	
+       	coordinates_range[58][0] = 377; 
+       	coordinates_range[58][1] = 58;
+       	coordinates_range[59][0] = 640; 
+       	coordinates_range[59][1] = 58;
+       	
+       	
+       	coordinates_range[60][0] = 377; 
+       	coordinates_range[60][1] = 41;
+       	coordinates_range[61][0] = 640; 
+       	coordinates_range[61][1] = 41;
+       	
+       	
+       	coordinates_range[62][0] = 562; 
+       	coordinates_range[62][1] = 59;
+       	coordinates_range[63][0] = 562;
+       	coordinates_range[63][1] = 221;
+       	
+       	
+       	coordinates_range[64][0] = 585; 
+       	coordinates_range[64][1] = 59;
+       	coordinates_range[65][0] = 585; 
+       	coordinates_range[65][1] = 221;
+       	
+       	       	
+       	
        	
        	
        	
