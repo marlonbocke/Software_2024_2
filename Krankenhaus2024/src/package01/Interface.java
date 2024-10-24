@@ -4,6 +4,7 @@ import java.awt.EventQueue;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.MouseMotionAdapter;
+import java.lang.classfile.components.ClassPrinter.Node;
 import java.awt.event.MouseEvent;
 import javax.swing.JFrame;
 import javax.swing.JButton;
@@ -18,7 +19,14 @@ public class Interface {
     private JTextField textfield_destination_room;
     private String image_path = "/package01/hospital_plan.png";
     private JLabel image_hospital_plan;
-
+    
+   // int parent_i, parent_j;
+    //double f, g, h;
+ 
+    
+  
+    
+    
     /**
      * Launch the application.
      */
@@ -40,6 +48,7 @@ public class Interface {
      */
     public Interface() {
         initialize();
+        calulate();
     }
 
     /**
@@ -108,20 +117,38 @@ public class Interface {
         textfield_destination_room.setColumns(10);
         textfield_destination_room.setBounds(20, 221, 109, 20);
         frame.getContentPane().add(textfield_destination_room);
+       
+        
+
+    
+
     }
+    
+    int[] position; // [x, y] coordinates of the node
+    Node parent;    // the previous node in the path
+    int g;          // cost from the start node
+    int h;          // heuristic cost (Manhattan distance to goal)
+    int f;          // total cost (g + h)
 
+    public Node(int[] position, Node parent) {
+        this.position = position;
+        this.parent = parent;
+        this.g = 0;
+        this.h = 0;
+        this.f = 0;
+    }
     
     
-    
-    
-    public void calulate() {
-
-    	
-   int[] startNode = {100, 200};  // coordinates of the start node
-   int[] goalNode = {500, 400};   // coordinates of the destination node
+    private void calulate() {
+      System.out.println("calulate");
+      
+   int[] startNode = {100, 200};  // coordinates of the start node (point)
+   int[] goalNode = {500, 400};   // coordinates of the destination node (point)
 	
-  // double distance = manhattanDistance(startNode, goalNode);
-    	
+   double distance = manhattanDistance(startNode, goalNode);
+
+   
+   System.out.println("The distance value are : " + distance );
  }
     private static double manhattanDistance(int[] startNode, int[] goalNode) {
     	
@@ -133,16 +160,9 @@ public class Interface {
 
         
         int result=(int) Math.sqrt(Math.pow(x13 - x12, 2) + Math.pow(y13 - y12, 2));
-        	
-        	
-        
         return result;
-       
-    	
 			}
 
-    
-    
     public static void distance(String[] arg) {
         // Array of node coordinates
         int[][] nodes = {
@@ -162,6 +182,44 @@ public class Interface {
     }
     
     
+ 
+   // A* Search Algorithm
+    public static List<Node> aStarSearch(int[] start, int[] goal, int[][] grid) {
+        PriorityQueue<Node> openList = new PriorityQueue<>((a, b) -> a.f - b.f); // open list
+        List<Node> closedList = new ArrayList<>(); // closed list
+
+        Node startNode = new Node(start, null);
+        Node goalNode = new Node(goal, null);
+
+        openList.add(startNode);
+
+        while (!openList.isEmpty()) {
+            Node current = openList.poll();
+
+            if (Arrays.equals(current.position, goal)) {
+                return reconstructPath(current);  // Found goal, return the path
+            }
+
+            closedList.add(current);
+
+            for (Node neighbor : getNeighbors(current, grid)) {
+                if (closedList.contains(neighbor)) continue;
+
+                int tentativeG = current.g + 1; // Assuming each step costs 1
+
+                if (!openList.contains(neighbor) || tentativeG < neighbor.g) {
+                    neighbor.g = tentativeG;
+                    neighbor.h = manhattanDistance(neighbor.position, goal);
+                    neighbor.f = neighbor.g + neighbor.h;
+                    neighbor.parent = current;
+
+                    if (!openList.contains(neighbor)) {
+                        openList.add(neighbor);
+                    }
+                }
+            }
+    
+    
     
     
     
@@ -171,5 +229,6 @@ public class Interface {
     
     
     
-	    }
-    
+	 //   }
+}
+
