@@ -46,7 +46,7 @@ public class Settings {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 652, 415);
+		frame.setBounds(100, 100, 652, 1100);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	    frame.getContentPane().setLayout(null);
 	    
@@ -65,7 +65,7 @@ public class Settings {
 		
 	    JLabel image_hintergrund_Bild = new JLabel("hintergrund_Bild");
 			image_hintergrund_Bild.setIcon(new ImageIcon(Interface.class.getResource(image_path)));
-	        image_hintergrund_Bild.setBounds(0, 0, 2082, 382);
+	        image_hintergrund_Bild.setBounds(0, 0, 2082, 1061);
 	        frame.getContentPane().add(image_hintergrund_Bild);
 	        
 	     
