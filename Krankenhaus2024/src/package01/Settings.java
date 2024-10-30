@@ -10,16 +10,13 @@ import java.awt.BorderLayout;
 import javax.swing.JButton;
 import java.awt.Font;
 import java.awt.Color;
-//initialization 
+		//class Settings,definition
 public class Settings {
 	private String image_path = "/package01/hintergrund_Bild.png/";
     private JLabel hintergrund_Bild;
     private JFrame frame;
-
-
-	/**
-	 * Launch the application.
-	 */
+    	//Launch the application
+    	//open the screen "Settings" of the pc/touchscreen
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -33,18 +30,13 @@ public class Settings {
 		});
 	}
 
-	/**
-	 * Create the application.
-	 */
+		//Create the application
+		//initialization 
 	public Settings() {
 		initialize();
 	}
-	
-	
-	/**
-	 * Initialize the contents of the frame.
-	 */
-	//open the screen "Settings"->"Einstellung" of the pc / touchscreen
+		//Initialize the contents of the frame
+		//open the screen "Settings"->"Einstellung" of the pc / touchscreen
 	private void initialize() {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 1676, 1111);
