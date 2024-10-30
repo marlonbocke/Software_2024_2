@@ -36,7 +36,7 @@ public class Settings {
 		initialize();
 	}
 		//Initialize the contents of the frame
-		//open the screen "Settings"->"Einstellung" of the pc / touchscreen
+		//open the screen "Settings" of the pc / touchscreen
 	private void initialize() {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 1676, 1111);
