@@ -38,20 +38,21 @@ public class Settings {
 		//Initialize the contents of the frame
 		//open the screen "Settings" of the pc / touchscreen
 	private void initialize() {
+		// Create the main frame
 		frame = new JFrame();
 		frame.setBounds(100, 100, 1676, 1111);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	    frame.getContentPane().setLayout(null);
 	    
-	    //White Label for the background picture
+	    //Label for the title
 	    JLabel lblNewLabel = new JLabel("Einstellung");
 	    lblNewLabel.setFont(new Font("Adobe Fan Heiti Std B", Font.PLAIN, 14));
 	    lblNewLabel.setBackground(Color.WHITE);
-	    lblNewLabel.setForeground(Color.WHITE);
-	    lblNewLabel.setBounds(20, 11, 141, 129);
-	    frame.getContentPane().add(lblNewLabel);
+	    lblNewLabel.setForeground(Color.WHITE);// Set text color to white for visibility
+	    lblNewLabel.setBounds(20, 11, 141, 129);// Set position and size of the label
+	    frame.getContentPane().add(lblNewLabel); // Add the label to the frame
 	    
-	    //To the main menu button(Hauptmenue)
+	    // the main menu button(Hauptmenue)
 	    JButton btnNewButton = new JButton("Zum Hauptmenue");
 	    btnNewButton.setBackground(Color.PINK);
 	    btnNewButton.setFont(new Font("Arial Black", Font.PLAIN, 14));
@@ -60,9 +61,9 @@ public class Settings {
 	    
 		//background picture(flowers)
 	    JLabel image_hintergrund_Bild = new JLabel("hintergrund_Bild");
-			image_hintergrund_Bild.setIcon(new ImageIcon(Interface.class.getResource(image_path)));
-	        image_hintergrund_Bild.setBounds(0, 0, 2082, 1061);
-	        frame.getContentPane().add(image_hintergrund_Bild);
+			image_hintergrund_Bild.setIcon(new ImageIcon(Interface.class.getResource(image_path))); // Load the image icon
+	        image_hintergrund_Bild.setBounds(0, 0, 2082, 1061);// Set position and size for the background
+	        frame.getContentPane().add(image_hintergrund_Bild);// Add the background image to the frame
 	        
 	     
 	}
