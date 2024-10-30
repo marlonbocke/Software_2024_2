@@ -46,7 +46,7 @@ public class Settings {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 652, 1100);
+		frame.setBounds(100, 100, 1676, 1111);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	    frame.getContentPane().setLayout(null);
 	    
