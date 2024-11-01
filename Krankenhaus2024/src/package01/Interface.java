@@ -50,7 +50,8 @@ public class Interface {
      */
     public Interface() {
         initialize();
-        calulate();
+        //calulate();
+        //Node();
     }
 
     /**
@@ -121,22 +122,33 @@ public class Interface {
         frame.getContentPane().add(textfield_destination_room);
     }
 
+    
+    
+    
+    //Algorithms class
+    public static class Node {
+    
+   
+    	
     int[] position; // [x, y] coordinates of the node
-    Node parent;    // the previous node in the path
-    int g;          // cost from the start node
-    int h;          // heuristic cost (Manhattan distance to goal)
-    int f;          // total cost (g + h)
+      Node parent;    // the previous node in the path
+     int g;          // cost from the start node
+     int h;          // heuristic cost (Manhattan distance to goal)
+     int f;          // total cost (g + h)
 
 
-    public void Node(int[] position, Node parent) {
+    public Node(int[] position, Node parent) {
+    	System.out.println("Node");
+    	
         this.position = position;
         this.parent = parent;
         this.g = 0;
         this.h = 0;
         this.f = 0;
+        calulate();
     }
 
-    private void calulate() {
+    public void calulate() {
         System.out.println("calulate");
         
      int[] startNode = {100, 200};  // coordinates of the start node (point)
@@ -181,42 +193,88 @@ public class Interface {
 
 	        System.out.println("Total distance for the path: " + totalDistance);
 	    }
-     
+    
 	 public static List<Node> aStarSearch(int[] start, int[] goal, int[][] grid) {
 		 
-		 PriorityQueue<Node> openList = new PriorityQueue<>((a, b) -> a.f - b.f); // open list
-	        List<Node> closedList = new ArrayList<>(); // closed list
+		PriorityQueue<Node> openList = new PriorityQueue<>((a, b) -> a.f - b.f); // open list
+		List<Node> closedList = new ArrayList<>(); // closed list
 
-		 
-		 
-		 
-		return null;
-    
-	
-		 
-		 
-	
+		
+		    Node startNode = new Node(start,null);
+	        Node goalNode = new Node(goal, null);
+		
+		
+		
+		openList.add(startNode);
+
+        while (!openList.isEmpty()) {
+            Node current = openList.poll();
+
+            if (Arrays.equals(current.position, goal)) {
+                return reconstructPath(current);  // Found goal, return the path
+            }
+
+            closedList.add(current);
+
+            for (Node neighbor : getNeighbors(current, grid)) {
+                if (closedList.contains(neighbor)) continue;
+
+                int tentativeG = current.g + 1; // Assuming each step costs 1
+
+                if (!openList.contains(neighbor) || tentativeG < neighbor.g) {
+                    neighbor.g = tentativeG;
+                    neighbor.h = (int) manhattanDistance(neighbor.position, goal);
+                    neighbor.f = neighbor.g + neighbor.h;
+                    neighbor.parent = current;
+
+                    if (!openList.contains(neighbor)) {
+                        openList.add(neighbor);
+                    }
+                }
+            }
     
 	 }
-    
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
+		return closedList;
+    	 
+	 }
+    }
+
+	private static List<Node> getNeighbors(Node current, int[][] grid) {
+	
+		
+		 List<Node> neighbors = new ArrayList<>();
+		 
+	        int[][] directions = {
+	                {-1, 0}, // top
+	                {1, 0},  // below
+	                {0, -1}, // left
+	                {0, 1}   // right
+	            };
+
+	        for (int[] direction : directions) {
+	            int newX = current.position[0] + direction[0];
+	            int newY = current.position[1] + direction[1];
+		 
+	            if (newX >= 0 && newX < grid.length && newY >= 0 && newY < grid[0].length) {
+	                
+	                if (grid[newX][newY] == 0) { 
+	                    Node neighbor = new Node(new int[]{newX, newY}, current);
+	                    neighbors.add(neighbor);
+	                }
+	            
+		
+	            }
+	        }
+		return neighbors;
+	}
+
+	private static List<Node> reconstructPath(Node current) {
+		// TODO Auto-generated method stub
+		
+		System.out.println(current);
+		
+		return null;
+	}
 	 
 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
 }
