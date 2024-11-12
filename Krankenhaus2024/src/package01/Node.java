@@ -14,14 +14,14 @@ public class Node {
     
     
     public static void main(String[] args) {
-        int[] start = {64, 47};  
-        int[] goal = {436, 395};   
+        int[] start = {45, 35};  
+        int[] goal = {441, 52};   
 
    
     
         
-        int[][] nodePositions ={
-                {64, 47}, {64, 226}, {204, 47}, {204, 226}, {252, 226},
+        int[][] nodePositions ={		//x,y      //have to insert more node coordinates
+                {64, 47}, {64, 134}, {64, 226}, {204, 47}, {204, 134}, {204, 226}, {252, 226}, {202, 226}, {144, 226},
                 {252, 395}, {436, 395}, {436, 226}, {573, 226}, {573, 52}, {441, 52}
             };
         

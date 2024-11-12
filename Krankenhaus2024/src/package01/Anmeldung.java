@@ -27,11 +27,7 @@ public class Anmeldung {
     	
     	initialize();
     	System.out.println("Test");
-    	
-    	
-  
-    	
-       
+    	     
     }
 
     
