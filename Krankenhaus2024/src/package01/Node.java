@@ -14,29 +14,63 @@ public class Node {
     
     
     public static void main(String[] args) {
-        int[] start = {45, 35};  
-        int[] goal = {441, 52};   
+        int[] start = {20, 20};  
+        int[] goal = {436, 394};   
 
    
     
         
         int[][] nodePositions ={		//x,y      //have to insert more node coordinates
+                
+                
+       
                 {64, 47},  //n1
-                {64, 134}, //n2 
+                {64, 85},  //n1.1
+                {64, 134}, //n2
+                {64, 180}, //n2.1
                 {64, 226}, //n3
-                {131, 226}, //n4   
-                {204, 47}, 
-                {204, 134}, 
-                {204, 226}, 
-                {252, 226}, 
-                {202, 226}, 
-                {144, 226},
-                {252, 395}, 
-                {436, 395}, 
-                {436, 226}, 
-                {573, 226},
-                {573, 52}, 
-                {441, 52}
+                {100, 226}, //n3.1       
+                {131, 226}, //n4
+                {154, 226}, //n4.1                
+                {204, 226}, //n5
+                {225, 226}, //n5.1
+                {252, 226}, //n6
+                {252, 285}, //n6.1
+                {252, 317}, //n7
+                {252, 355}, //n7.1
+                {252, 394}, //n8
+                {310, 394}, //n8.1
+                {360, 394}, //n9
+                {395, 394}, //n9.1
+                {436, 394}, //n10
+                {436, 345}, //n10.1
+                {436, 313}, //n11
+                {436, 270}, //n11.1
+                {436, 226}, //n12
+                {486, 226}, //n12.1
+                {524, 226}, //n13
+                {550, 226}, //n13.1
+                {571, 226}, //n14
+                {571, 180}, //n14.1
+                {571, 134}, //n15
+                {571, 85}, //n15.1
+                {571, 47}, //n16
+                {532, 47}, //n16.1
+                {499, 47}, //n17
+                {450, 47}, //n17.1
+                {436, 47}, //n18
+                {436, 85}, //n18.1
+                {436, 134}, //n19
+                {436, 180}, //n19.1
+                {322, 226}, //n20
+                
+                {207, 134}, //n21
+                {207, 90}, //n21.1
+                {207, 47}, //n22
+                {175, 47}, //n22.1
+                {130, 47}, //n23
+                                   
+             
             };
         
         
@@ -150,7 +184,7 @@ public class Node {
         List<Node> neighbors = new ArrayList<>();
 
         for (Node node : nodeList) {
-            if (!Arrays.equals(current.position, node.position) && manhattanDistance(current.position, node.position) <= 300) {
+            if (!Arrays.equals(current.position, node.position) && manhattanDistance(current.position, node.position) <= 100) {
               //if (current.position <= node.position) {	
                 neighbors.add(node);
                 System.out.println("getNeigbors=true");
@@ -174,3 +208,6 @@ public class Node {
         return path;
     }
 }
+
+
+//currentProblem: goal point will not insert in node and that's why the algorithms didn't work if you enter a none node point. 
