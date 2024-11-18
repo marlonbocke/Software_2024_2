@@ -14,16 +14,15 @@ public class Node {
     
     
     public static void main(String[] args) {
-        int[] start = {20, 20};  
-        int[] goal = {436, 394};   
-
-   
-    
+           
+    	  int[] start = {20, 20};  
+          int[] goal = {50, 70};   
         
+    	
+    	
         int[][] nodePositions ={		//x,y      //have to insert more node coordinates
-                
-                
-       
+      
+        				
                 {64, 47},  //n1
                 {64, 85},  //n1.1
                 {64, 134}, //n2
@@ -69,12 +68,13 @@ public class Node {
                 {207, 47}, //n22
                 {175, 47}, //n22.1
                 {130, 47}, //n23
-                                   
+                goal
              
             };
         
         
-        
+        	
+      
         List<Node> nodeList = new ArrayList<>();
         for (int[] pos : nodePositions) {
             nodeList.add(new Node(pos, null));
