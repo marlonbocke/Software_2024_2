@@ -82,7 +82,6 @@ public class Node {
       //  System.out.println(start[1]);
         
         
-        
         List<Node> path = aStarSearch(start, goal, nodeList);
         
         if (path != null) {
