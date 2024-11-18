@@ -16,13 +16,11 @@ public class Node {
     public static void main(String[] args) {
            
     	  int[] start = {20, 20};  
-          int[] goal = {50, 70};   
+          int[] goal = {64, 220};   
         
     	
     	
-        int[][] nodePositions ={		//x,y      //have to insert more node coordinates
-      
-        				
+        int[][] nodePositions ={		//x,y      //have to insert more node coordinates         				
                 {64, 47},  //n1
                 {64, 85},  //n1.1
                 {64, 134}, //n2
@@ -61,8 +59,7 @@ public class Node {
                 {436, 85}, //n18.1
                 {436, 134}, //n19
                 {436, 180}, //n19.1
-                {322, 226}, //n20
-                
+                {322, 226}, //n20                
                 {207, 134}, //n21
                 {207, 90}, //n21.1
                 {207, 47}, //n22

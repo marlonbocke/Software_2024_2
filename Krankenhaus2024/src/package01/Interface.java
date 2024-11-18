@@ -6,6 +6,7 @@ import java.awt.Frame;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
 import java.lang.classfile.components.ClassPrinter.LeafNode;
@@ -96,11 +97,15 @@ public class Interface {
         System.out.println("Breite: " + width);
         System.out.println("Höhe: " + height);
 
-        image_hospital_plan.addMouseMotionListener(new MouseMotionAdapter() {
-            public void mouseMoved(MouseEvent e) {
+        image_hospital_plan.addMouseListener(new MouseAdapter() {
+        	//image_hospital_plan.addMouseMotionListener(new MouseMotionAdapter() {	
+            public void mouseClicked(MouseEvent e) {
                 int mouseX = e.getX();
                 int mouseY = e.getY();
                 System.out.println("Maus bewegt: X = " + mouseX + ", Y = " + mouseY);
+                
+                ArrayList<int[]> coordinates = new ArrayList<>();
+                coordinates.add(new int[]{mouseX, mouseY});
             }
         });
         
