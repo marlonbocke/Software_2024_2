@@ -72,7 +72,7 @@ public class Interface {
 		frame.setLocationRelativeTo(null);
 		frame.getContentPane().setLayout(null);
         
-        
+       
         JButton button_start_search = new JButton("Suche Starten");
         button_start_search.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent arg0) {
