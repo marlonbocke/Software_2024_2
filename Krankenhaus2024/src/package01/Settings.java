@@ -22,8 +22,8 @@ import java.awt.event.ActionEvent;
 
 		//class Settings,definition
 public class Settings {
-	private String image_path = "/package01/hintergrund_Bild.png/";
-    private JLabel hintergrund_Bild;
+	private String image_path = "/package01/Bildsettings.png/";
+    private JLabel Bildsettings;
     private JFrame frame;
     	//Launch the application
     	//open the screen "Settings" of the pc/touchscreen
@@ -80,10 +80,10 @@ public class Settings {
 	    frame.getContentPane().add(btnNewButton);
 	    
 		//background picture(flowers)
-	    JLabel image_hintergrund_Bild = new JLabel("hintergrund_Bild");
-			image_hintergrund_Bild.setIcon(new ImageIcon(Interface.class.getResource(image_path))); // Load the image icon
-	        image_hintergrund_Bild.setBounds(0, 0, 2082, 1061);// Set position and size for the background
-	        frame.getContentPane().add(image_hintergrund_Bild);// Add the background image to the frame
+	    JLabel image_Bildsettings = new JLabel("Bildsettings");
+			image_Bildsettings.setIcon(new ImageIcon(Interface.class.getResource(image_path))); // Load the image icon
+	        image_Bildsettings.setBounds(0, 0, 2082, 1061);// Set position and size for the background
+	        frame.getContentPane().add(image_Bildsettings);// Add the background image to the frame
 	        
 	     
 	}
