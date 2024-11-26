@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.PriorityQueue;
 
 public class Node {
+
  
     int[] position; // [x, y] coordinates of the node
     Node parent;    // the previous node in the path
@@ -13,10 +14,25 @@ public class Node {
     int f;          // total cost (g + h)
     
     
-    public static void main(String[] args) {
+    public Node(int[] position, Node parent) {
+        this.position = position;
+        this.parent = parent;
+        this.g = 0;
+        this.h = 0;
+        this.f = 0;
+        
+      	
+    	
+        
+    }
+    
+    
+    
+    
+    public static void start(int[] start, int[] goal) {
            
-    	  int[] start = {20, 20};  
-          int[] goal = {64, 220};   
+//    	  int[] start = {20, 20};  
+//          int[] goal = {64, 220};   
           int[] corrdinates;      
         
     	
@@ -98,18 +114,7 @@ public class Node {
         
         
     }
-	public Node(int[] position, Node parent) {
-        this.position = position;
-        this.parent = parent;
-        this.g = 0;
-        this.h = 0;
-        this.f = 0;
-        
-      	
-    	
-        
-    }
- 
+	
     private static double manhattanDistance(int[] start, int[] goal) {       //calculate the manhattenDistance
         return Math.abs(goal[0] - start[0]) + Math.abs(goal[1] - start[1]);
     }
@@ -212,5 +217,6 @@ public class Node {
         return path;
     }
 }
+
 
 //currentProblem: goal point will not insert in node and that's why the algorithms didn't work if you enter a none node point. --problem solved
