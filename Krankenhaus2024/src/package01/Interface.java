@@ -186,7 +186,7 @@ public class Interface {
                  g2d.setColor(Color.RED); 
                  g2d.setStroke(new BasicStroke(2));
                  
-                 
+                
                  
                  
                  g2d.drawLine(x1, y1, x2, y2); 

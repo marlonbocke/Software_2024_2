@@ -98,7 +98,6 @@ public class Node {
         
         
     }
-    
 	public Node(int[] position, Node parent) {
         this.position = position;
         this.parent = parent;
