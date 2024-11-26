@@ -137,10 +137,14 @@ public class Interface {
                 // Action for search button
             		System.out.println("search button is working");
             		
-            	
-            		
             	//drawingPanel.setLineCoordinates(50, 50, 600, 400);
             	
+            	//	Node node = new Node();
+            		
+            	
+                 
+            		
+            		
             	
             }
         });
@@ -158,7 +162,7 @@ public class Interface {
     {
     	
     	
-    	 private int x1, y1, x2, y2;
+    	// private int x1, y1, x2, y2;
 
          public DrawingPanel() {
         	 
@@ -174,23 +178,41 @@ public class Interface {
 //             this.x2 = x2;
 //             this.y2 = y2;
              
+        		 
              System.out.println("DrawingPanel Class is working");
              
+             
+             for(int i=0; i< positionsArray.length; i++ )
+            
+             {
+            	 for(int j=0; j< positionsArray.length; j++)
+            	 {
+            		 
+            		   System.out.println(positionsArray[i][j]); 
+            		 
+            		 
+            	 }
+            	 
+            	 }
+            		 
+            		 
+            	 
+        
              repaint(); 
          
          }
-             @Override
-             protected void paintComponent(Graphics g) {
-                 super.paintComponent(g);
-                 Graphics2D g2d = (Graphics2D) g;
-                 g2d.setColor(Color.RED); 
-                 g2d.setStroke(new BasicStroke(2));
-                 
-                
-                 
-                 
-                 g2d.drawLine(x1, y1, x2, y2); 
-             }
+//             @Override
+//             protected void paintComponent(Graphics g) {
+//                 super.paintComponent(g);
+//                 Graphics2D g2d = (Graphics2D) g;
+//                 g2d.setColor(Color.RED); 
+//                 g2d.setStroke(new BasicStroke(2));
+//                 
+//                
+//                 
+//                 
+//                 g2d.drawLine(x1, y1, x2, y2); 
+//             }
      }
     	
     	
