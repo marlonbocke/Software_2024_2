@@ -89,7 +89,7 @@ public class Node {
                DrawingPanel DrawingPanel = new DrawingPanel();
                DrawingPanel.setLineCoordinates(positionsArray);
                
-               
+             
             }
         } else {
             System.out.println("Kein Pfad gefunden.");
