@@ -17,8 +17,8 @@ public class Node {
            
     	  int[] start = {20, 20};  
           int[] goal = {64, 220};   
+          int[] corrdinates;      
         
-    	
     	
         int[][] nodePositions ={		//x,y      //have to insert more node coordinates         				
                 {64, 47},  //n1
@@ -68,22 +68,28 @@ public class Node {
                 goal
              
             };
-        
-        
-        	
-      
+         	      
         List<Node> nodeList = new ArrayList<>();
         for (int[] pos : nodePositions) {
             nodeList.add(new Node(pos, null));
         }
       //  System.out.println(start[1]);
         
-        List<Node> path = aStarSearch(start, goal, nodeList);
+        List<Node> path = aStarSearch(start, goal, nodeList);    //coordinates will be send to algorithmus  
         
-        if (path != null) {
+        //List<int[]> coordinates = new ArrayList<>();
+        List<int[]> positions = new ArrayList<>();	 
+        
+		if (path != null) {
             System.out.println("Pfad gefunden:");
             for (Node node : path) {
-                System.out.println(Arrays.toString(node.position));
+               System.out.println(Arrays.toString(node.position));
+               int[][] positionsArray = positions.toArray(new int[positions.size()][]);
+               	
+               DrawingPanel DrawingPanel = new DrawingPanel();
+               DrawingPanel.setLineCoordinates(positionsArray);
+               
+               
             }
         } else {
             System.out.println("Kein Pfad gefunden.");
@@ -92,16 +98,20 @@ public class Node {
         
         
     }
- 
-    public Node(int[] position, Node parent) {
+    
+	public Node(int[] position, Node parent) {
         this.position = position;
         this.parent = parent;
         this.g = 0;
         this.h = 0;
         this.f = 0;
+        
+      	
+    	
+        
     }
  
-    private static double manhattanDistance(int[] start, int[] goal) {
+    private static double manhattanDistance(int[] start, int[] goal) {       //calculate the manhattenDistance
         return Math.abs(goal[0] - start[0]) + Math.abs(goal[1] - start[1]);
     }
  
@@ -119,7 +129,7 @@ public class Node {
         
         
         startNode.g = 1;
-        startNode.h = (int) manhattanDistance(start, goal);
+        startNode.h = (int) manhattanDistance(start, goal);     //call the manhattanDistance
         
         
         startNode.f = startNode.g + startNode.h;
@@ -204,4 +214,4 @@ public class Node {
     }
 }
 
-//currentProblem: goal point will not insert in node and that's why the algorithms didn't work if you enter a none node point. 
+//currentProblem: goal point will not insert in node and that's why the algorithms didn't work if you enter a none node point. --problem solved
