@@ -114,8 +114,7 @@ public class Anmeldung {
                 frame.setVisible(false);
         		new Settings();
                 
-                
-                
+                                
                 
                 
             } else {

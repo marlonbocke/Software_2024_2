@@ -184,7 +184,7 @@ public class Interface {
              {
             	 //for(int j=0; j< positionsArray.length; j++)
             	 
-            		   System.out.println(positionsArray[i]);             		   	
+            		  // System.out.println(positionsArray[i]);             		   	
             		   
              }
             		 
