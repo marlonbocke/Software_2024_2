@@ -96,7 +96,7 @@ public class Interface {
         System.out.println("X-Koordinate: " + x);
         System.out.println("Y-Koordinate: " + y);
         System.out.println("Breite: " + width);
-        System.out.println("Höhe: " + height);
+        System.out.println("Hoehe: " + height);
 
         image_hospital_plan.addMouseListener(new MouseAdapter() {
         	//image_hospital_plan.addMouseMotionListener(new MouseMotionAdapter() {	
