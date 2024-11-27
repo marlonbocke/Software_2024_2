@@ -54,8 +54,7 @@ public class Settings {
      * @wbp.parser.entryPoint
      */
     public Settings() {
-        initialize();
-        
+        initialize();        
     }
 
     /**
