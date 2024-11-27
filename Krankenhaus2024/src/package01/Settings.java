@@ -107,7 +107,7 @@ public class Settings {
         		new Anmeldung();
         	}
         });
-        btnKonfiguration.setBounds(896, 222, 109, 23);
+        btnKonfiguration.setBounds(888, 213, 117, 34);
         frame.getContentPane().add(btnKonfiguration);
         
         JButton btnChangeroom = new JButton("Raum abwandeln");
@@ -115,7 +115,7 @@ public class Settings {
         	public void actionPerformed(ActionEvent e) {
         	}
         });
-        btnChangeroom.setBounds(1063, 750, 128, 23);
+        btnChangeroom.setBounds(1056, 731, 154, 34);
         frame.getContentPane().add(btnChangeroom);
         
         JButton btnBlockroad = new JButton("Weg sperren");
@@ -123,10 +123,10 @@ public class Settings {
         	public void actionPerformed(ActionEvent e) {
         	}
         });
-        btnBlockroad.setBounds(600, 750, 105, 23);
+        btnBlockroad.setBounds(846, 828, 109, 34);
         frame.getContentPane().add(btnBlockroad);
                       JCheckBox chckAdmin = new JCheckBox("Administrator");
-                      chckAdmin.setBounds(908, 720, 97, 23);
+                      chckAdmin.setBounds(922, 756, 128, 23);
                       frame.getContentPane().add(chckAdmin);
         
     
@@ -137,11 +137,11 @@ public class Settings {
         	}
         	
         	        });
-        btnUnblockroad.setBounds(715, 750, 97, 23);
+        btnUnblockroad.setBounds(965, 828, 117, 34);
         frame.getContentPane().add(btnUnblockroad);
         
         JButton btnReplaceroom = new JButton("Raum ersetzen");
-        btnReplaceroom.setBounds(1201, 750, 109, 23);
+        btnReplaceroom.setBounds(1056, 779, 154, 34);
         frame.getContentPane().add(btnReplaceroom);
         
         JButton btnCloseroom = new JButton("Raum schliessen");
@@ -149,7 +149,7 @@ public class Settings {
         	public void actionPerformed(ActionEvent e) {
         	}
         });
-        btnCloseroom.setBounds(925, 750, 128, 23);
+        btnCloseroom.setBounds(733, 731, 147, 37);
         frame.getContentPane().add(btnCloseroom);
         
         JButton btnOpenroom = new JButton("Raum offen");
@@ -157,7 +157,7 @@ public class Settings {
         	public void actionPerformed(ActionEvent e) {
         	}
         });
-        btnOpenroom.setBounds(826, 750, 89, 23);
+        btnOpenroom.setBounds(733, 780, 147, 32);
         frame.getContentPane().add(btnOpenroom);
         
         JButton btnNewButton = new JButton("Speichern");
@@ -165,7 +165,7 @@ public class Settings {
         	public void actionPerformed(ActionEvent e) {
         	}
         });
-        btnNewButton.setBounds(905, 185, 89, 23);
+        btnNewButton.setBounds(888, 174, 117, 34);
         frame.getContentPane().add(btnNewButton);
         chckAdmin.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
