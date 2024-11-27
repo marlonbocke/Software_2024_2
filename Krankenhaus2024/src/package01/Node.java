@@ -14,27 +14,23 @@ public class Node {
     int f;          // total cost (g + h)
     
     
-    public Node(int[] position, Node parent) {
-        this.position = position;
-        this.parent = parent;
-        this.g = 0;
-        this.h = 0;
-        this.f = 0;
-        
-      	
-    	
-        
-    }
     
+
     
-    
-    
-    public static void start(int[] start, int[] goal) {
-           
+    public Node() {
+		//start(null, null);
+	}
+
+
+
+
+	public static void start(int[] start, int[] goal) {
+     System.out.println("starting alogrithmus");      
+		
 //    	  int[] start = {20, 20};  
 //          int[] goal = {64, 220};   
-          int[] corrdinates;      
-        
+          int[][] corrdinates_positions = null;      
+          int[] positionsArray = null;
     	
         int[][] nodePositions ={		//x,y      //have to insert more node coordinates         				
                 {64, 47},  //n1
@@ -94,31 +90,64 @@ public class Node {
         List<Node> path = aStarSearch(start, goal, nodeList);    //coordinates will be send to algorithmus  
         
         //List<int[]> coordinates = new ArrayList<>();
-        List<int[]> positions = new ArrayList<>();	 
+        //List<int[]> positions = new ArrayList<>();	 
         
 		if (path != null) {
-            System.out.println("Pfad gefunden:");
+			System.out.println("Pfad gefunden:");
             for (Node node : path) {
-               System.out.println(Arrays.toString(node.position));
-               int[][] positionsArray = positions.toArray(new int[positions.size()][]);
-               	
-               DrawingPanel DrawingPanel = new DrawingPanel();
-               DrawingPanel.setLineCoordinates(positionsArray);
-               
-             
+               //System.out.println(Arrays.toString(node.position));
+                //positionsArray = positions.toArray(new int[positions.size()][]);
+            	positionsArray = node.position;
+            	
+            	
             }
+            int j=0;
+            for(int i = 0; i< positionsArray.length; i++)
+            {
+            	j=j+2;
+            	
+            	corrdinates_positions[i][j]=positionsArray[i];
+            	
+            }
+            
+            
+            
+            DrawingPanel DrawingPanel = new DrawingPanel();
+            DrawingPanel.setLineCoordinates(positionsArray);
+            
+            
+            
+                        
         } else {
             System.out.println("Kein Pfad gefunden.");
            
         }
+		
         
-        
-    }
+    } 
+	
+	
+	 public Node(int[] position, Node parent) {
+	        this.position = position;
+	        this.parent = parent;
+	        this.g = 0;
+	        this.h = 0;
+	        this.f = 0;
+	    }
+	 
+	
+	
+	
+	
+	
+	
 	
     private static double manhattanDistance(int[] start, int[] goal) {       //calculate the manhattenDistance
         return Math.abs(goal[0] - start[0]) + Math.abs(goal[1] - start[1]);
     }
- 
+
+    
+    
     public static List<Node> aStarSearch(int[] start, int[] goal, List<Node> nodeList) {
         System.out.println("aStarSearch");
         
@@ -130,17 +159,15 @@ public class Node {
         List<Node> closedList = new ArrayList<>();
 
         Node startNode = new Node(start, null);
-        
-        
+            
         startNode.g = 1;
         startNode.h = (int) manhattanDistance(start, goal);     //call the manhattanDistance
-        
-        
+                
         startNode.f = startNode.g + startNode.h;
 
         openList.add(startNode);
 
-        while (!openList.isEmpty()) {    //open list is empty
+        while (!openList.isEmpty()) {    //open list is not empty
         	
         	 i=i+1;
              System.out.println("openlist is empty="+i);

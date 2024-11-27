@@ -13,8 +13,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
-import java.lang.classfile.components.ClassPrinter.LeafNode;
-import java.lang.classfile.components.ClassPrinter.Node;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -139,7 +138,12 @@ public class Interface {
             		
             	//drawingPanel.setLineCoordinates(50, 50, 600, 400);
             	
-            	//	Node node = new Node();
+            		
+            		 int[] start = {20, 20};  
+                   int[] goal = {64, 220};   
+                              		
+            		Node node = new Node();
+            		Node.start(start, goal);
             		
             	
                  
@@ -162,7 +166,7 @@ public class Interface {
     {
     	
     	
-    	// private int x1, y1, x2, y2;
+    	
 
          public DrawingPanel() {
         	 
@@ -171,56 +175,39 @@ public class Interface {
 
          //public void setLineCoordinates(int x1, int y1, int x2, int y2) {
         	 
-        	 public void setLineCoordinates(int[][] positionsArray) {
-                 	 
-//             this.x1 = x1;
-//             this.y1 = y1;
-//             this.x2 = x2;
-//             this.y2 = y2;
-             
-        		 
-             System.out.println("DrawingPanel Class is working");
+        	 public void setLineCoordinates(int[] positionsArray) {                 	               	 
+             //System.out.println("DrawingPanel Class is working");
              
              
              for(int i=0; i< positionsArray.length; i++ )
             
              {
-            	 for(int j=0; j< positionsArray.length; j++)
-            	 {
-            		 
-            		   System.out.println(positionsArray[i][j]); 
-            		 
-            		 
-            	 }
+            	 //for(int j=0; j< positionsArray.length; j++)
             	 
-            	 }
+            		   System.out.println(positionsArray[i]);             		   	
+            		   
+             }
             		 
-            		 
+        	 }	 
             	 
         
-             repaint(); 
+             //repaint(); 
          
-         }
-//             @Override
-//             protected void paintComponent(Graphics g) {
-//                 super.paintComponent(g);
-//                 Graphics2D g2d = (Graphics2D) g;
-//                 g2d.setColor(Color.RED); 
-//                 g2d.setStroke(new BasicStroke(2));
-//                 
-//                
-//                 
-//                 
-//                 g2d.drawLine(x1, y1, x2, y2); 
-//             }
-     }
-    	
-    	
-    	
-    	
+//        	 @Override
+//        	    protected void paintComponent(Graphics g) {
+//        	        super.paintComponent(g);
+//        	        if (drawLine) { // Zeichne nur, wenn eine Linie gesetzt wurde
+//        	            Graphics2D g2d = (Graphics2D) g;
+//        	            g2d.setColor(Color.RED); // Farbe der Linie
+//        	            g2d.setStroke(new BasicStroke(2)); // Dicke der Linie
+//        	            g2d.drawLine(x1, y1, x2, y2); // Linie zeichnen
+//        	        }
+//        	    }	
+//    	
+//    	
     
     
-    
+    }
     
     
     
