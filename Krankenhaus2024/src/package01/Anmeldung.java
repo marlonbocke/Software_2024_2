@@ -86,7 +86,7 @@ public class Anmeldung {
         lblNewLabel_1.setBounds(161, 54, 119, 14);
         frame.getContentPane().add(lblNewLabel_1);
         
-        JButton button_back = new JButton("Zurück");
+        JButton button_back = new JButton("Zurueck");
         button_back.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent e) {
         		
