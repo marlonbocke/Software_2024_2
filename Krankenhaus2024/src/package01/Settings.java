@@ -27,7 +27,7 @@ import javax.swing.SwingConstants;
 import java.awt.Font;
 import javax.swing.JCheckBox;
 
-public class Setttings {
+public class Settings {
 
     JFrame frame;
     private String image_path = "/package01/hospital_plan.png";
@@ -53,7 +53,7 @@ public class Setttings {
      * Create the application.
      * @wbp.parser.entryPoint
      */
-    public Setttings() {
+    public Settings() {
         initialize();
         
     }
