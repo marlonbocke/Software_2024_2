@@ -78,7 +78,6 @@ public class Node {
                 {175, 47}, //n22.1
                 {130, 47}, //n23
                 goal
-             
             };
          	      
         List<Node> nodeList = new ArrayList<>();

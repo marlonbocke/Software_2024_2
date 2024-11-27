@@ -164,8 +164,7 @@ public class Interface {
 
  class DrawingPanel extends JPanel  
     {
-    	
-    	
+    	  	
 
          public DrawingPanel() {
         	 
