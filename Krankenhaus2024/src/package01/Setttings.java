@@ -110,12 +110,12 @@ public class Setttings {
         btnKonfiguration.setBounds(896, 222, 109, 23);
         frame.getContentPane().add(btnKonfiguration);
         
-        JButton btnChangeroom = new JButton("Raum ändern");
+        JButton btnChangeroom = new JButton("Raum abwandeln");
         btnChangeroom.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent e) {
         	}
         });
-        btnChangeroom.setBounds(1061, 750, 109, 23);
+        btnChangeroom.setBounds(1063, 750, 128, 23);
         frame.getContentPane().add(btnChangeroom);
         
         JButton btnBlockroad = new JButton("Weg sperren");
@@ -123,7 +123,7 @@ public class Setttings {
         	public void actionPerformed(ActionEvent e) {
         	}
         });
-        btnBlockroad.setBounds(621, 750, 105, 23);
+        btnBlockroad.setBounds(600, 750, 105, 23);
         frame.getContentPane().add(btnBlockroad);
                       JCheckBox chckAdmin = new JCheckBox("Administrator");
                       chckAdmin.setBounds(908, 720, 97, 23);
@@ -136,21 +136,20 @@ public class Setttings {
         		
         	}
         	
-        	
-        });
-        btnUnblockroad.setBounds(736, 750, 97, 23);
+        	        });
+        btnUnblockroad.setBounds(715, 750, 97, 23);
         frame.getContentPane().add(btnUnblockroad);
         
-        JButton btnReplaceroom = new JButton("Raum_ersetzen");
-        btnReplaceroom.setBounds(1180, 750, 109, 23);
+        JButton btnReplaceroom = new JButton("Raum ersetzen");
+        btnReplaceroom.setBounds(1201, 750, 109, 23);
         frame.getContentPane().add(btnReplaceroom);
         
-        JButton btnCloseroom = new JButton("Raum_schließen");
+        JButton btnCloseroom = new JButton("Raum schliessen");
         btnCloseroom.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent e) {
         	}
         });
-        btnCloseroom.setBounds(942, 750, 109, 23);
+        btnCloseroom.setBounds(925, 750, 128, 23);
         frame.getContentPane().add(btnCloseroom);
         
         JButton btnOpenroom = new JButton("Raum offen");
@@ -158,7 +157,7 @@ public class Setttings {
         	public void actionPerformed(ActionEvent e) {
         	}
         });
-        btnOpenroom.setBounds(843, 750, 89, 23);
+        btnOpenroom.setBounds(826, 750, 89, 23);
         frame.getContentPane().add(btnOpenroom);
         
         JButton btnNewButton = new JButton("Speichern");
