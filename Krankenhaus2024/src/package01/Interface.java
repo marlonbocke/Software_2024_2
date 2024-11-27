@@ -166,7 +166,6 @@ public class Interface {
     {
     	
     	
-    	
 
          public DrawingPanel() {
         	 
