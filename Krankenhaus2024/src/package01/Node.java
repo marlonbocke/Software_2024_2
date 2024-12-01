@@ -30,7 +30,7 @@ public class Node {
 //    	  int[] start = {20, 20};  
 //          int[] goal = {64, 220};   
           int[][] corrdinates_positions = null;      
-          int[][] positionsArray = null;
+         // int[][] positionsArray = null;
     	
         int[][] nodePositions ={		//x,y      //have to insert more node coordinates         				
                 {64, 47},  //n1
@@ -88,44 +88,37 @@ public class Node {
         List<Node> path = aStarSearch(start, goal, nodeList);    //coordinates will be send to algorithmus  
         
         //List<int[]> coordinates = new ArrayList<>();
-        List<int[]> positions = new ArrayList<>();	 
-        
-		if (path != null) {
+       
+        if (path != null) {
 			System.out.println("Pfad gefunden:");
+			int i=0;
+			int[][] positionsArray = new int[path.size()][2];
             for (Node node : path) {
-               //System.out.println(Arrays.toString(node.position));
-                //positionsArray = positions.toArray(new int[positions.size()][]);
-            	//positionsArray = node.position;
-            	 positions.add(node.position);
-            	
-            }
-            positionsArray = positions.toArray(new int[positions.size()][]);
-            
-            int j=0;
-            for(int i = 0; i< positionsArray.length; i++)
-            {
-            	 corrdinates_positions[i][0] = positionsArray[i][0];  // x-Koordinate
-                 corrdinates_positions[i][1] = positionsArray[i][1];  // y-Koordinate
-            }
-            
-         
-            for(int i=0; i <corrdinates_positions.length; i++)         	
-            {
-            	for(int k = 0;k <corrdinates_positions.length; k++)
-            		
-            	{
-            		
-            		System.out.println("The new array is"+corrdinates_positions[i][k]);		
-            		
-            	}	
-            	            	
-            }	
-            
-            
-//            DrawingPanel DrawingPanel = new DrawingPanel();
-//            DrawingPanel.setLineCoordinates(positionsArray);
-            
-            
+              
+               System.out.println(Arrays.toString(node.position)); 
+              
+               positionsArray[i][0] = node.position[0];  // X-Koordinate
+               positionsArray[i][1] = node.position[1];  // Y-Koordinate
+               i++;
+			
+                }
+
+           //System.out.println("\nPositionen in der Liste:");
+//           for (int k = 0; i <positionsArray.length; k++) {
+//        	   System.out.println(k);
+//        	   for (int l = 0; l <positionsArray.length; l++) {
+//        		   {
+//        	   
+//               System.out.println(positionsArray[k][l]);
+//               
+//        		   }
+//               
+//           }
+
+//         positionsArray = positions.toArray(new int[positions.size()][]);
+         DrawingPanel DrawingPanel = new DrawingPanel();
+         DrawingPanel.setPositionsArray(positionsArray);            
+
             
                                  
         } else {

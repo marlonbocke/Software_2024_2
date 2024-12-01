@@ -7,6 +7,8 @@ import java.awt.EventQueue;
 import java.awt.Frame;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.HeadlessException;
+import java.awt.Shape;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -58,14 +60,22 @@ public class Interface {
      * Create the application.
      */
     public Interface() {
-        initialize();
+       
+    	if (java.awt.GraphicsEnvironment.isHeadless()) {
+    	    System.err.println("Die Umgebung ist headless. GUI-Funktionen sind nicht verfügbar.");
+    	    // Alternativ: Programm ohne GUI starten
+    	} else {
+    	    // GUI-Komponenten initialisieren
+    	    initialize();
+    	}
+
+    	
+    	
         
     }
 
-    /**
-     * Initialize the contents of the frame.
-     * @param <BufferedImage>
-     */
+ 
+   
     private <BufferedImage> void initialize() {
     	frame = new JFrame();
 		Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
@@ -144,10 +154,7 @@ public class Interface {
                               		
             		Node node = new Node();
             		Node.start(start, goal);
-            		
-            	
-                 
-            		
+            		                   		
             		
             	
             }
@@ -162,55 +169,50 @@ public class Interface {
 }
 
 
- class DrawingPanel extends JPanel  
-    {
-    	  	
 
-         public DrawingPanel() {
-        	 
-        	          setOpaque(false); 
-         }
 
-         //public void setLineCoordinates(int x1, int y1, int x2, int y2) {
-        	 
-        	 public void setLineCoordinates(int[] positionsArray) {                 	               	 
-             //System.out.println("DrawingPanel Class is working");
-             
-             
-             for(int i=0; i< positionsArray.length; i++ )
-            
-             {
-            	 //for(int j=0; j< positionsArray.length; j++)
-            	 
-            		  // System.out.println(positionsArray[i]);             		   	
-            		   
-             }
-            		 
-        	 }	 
-            	 
-        
-             //repaint(); 
-         
-//        	 @Override
-//        	    protected void paintComponent(Graphics g) {
-//        	        super.paintComponent(g);
-//        	        if (drawLine) { // Zeichne nur, wenn eine Linie gesetzt wurde
-//        	            Graphics2D g2d = (Graphics2D) g;
-//        	            g2d.setColor(Color.RED); // Farbe der Linie
-//        	            g2d.setStroke(new BasicStroke(2)); // Dicke der Linie
-//        	            g2d.drawLine(x1, y1, x2, y2); // Linie zeichnen
-//        	        }
-//        	    }	
-//    	
-//    	
-    
-    
+class DrawingPanel extends JPanel {
+
+    private int[][] positionsArray;
+    private boolean drawLine = false;
+    public DrawingPanel() {
+        setOpaque(false);
     }
+
+    public void setPositionsArray(int[][] positionsArray) {
+        this.positionsArray = positionsArray;
+        drawLine = true;
+        repaint(); // Call repaint only once after setting data
+    }
+
+    @Override
+    protected void paintComponent(Graphics g) {
+    	System.out.println("paint1");
+        super.paintComponent(g);
+        if (drawLine) {
+            Graphics2D g2d = (Graphics2D) g;
+            g2d.setColor(Color.RED);
+            g2d.setStroke(new BasicStroke(2));
+
+            // Loop to draw lines between consecutive points
+            System.out.println("paint2");
+            
+            for (int i = 0; i < positionsArray.length; i++) {
+                int x = positionsArray[i][0];
+                int y = positionsArray[i][1];
+                int x2 = positionsArray[i + 1][0];
+                int y2 = positionsArray[i + 1][1];
+                g2d.drawLine(x, y, x2, y2);
+            }
+        }
+    }
+}
+//
+//
+//
+
+   //some problems with the "drawline" function. paintComponent method dont't work. I will fix that tomorrow after the job interview.  
     
-    
-    
-    
-    
-     
+
     
 
