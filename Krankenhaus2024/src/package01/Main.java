@@ -13,7 +13,7 @@ public class Main {
             initializeDatabase();
 
             // Start the login window
-            Anmeldung.main(args);
+            //Anmeldung.main(args);
         } catch (SQLException e) {
             e.printStackTrace();
             System.out.println("Failed to initialize database: " + e.getMessage());
