@@ -47,23 +47,27 @@ public class Settings {
 	    //Label for the title
 	    JLabel lblNewLabel = new JLabel("Einstellung");
 	    lblNewLabel.setFont(new Font("Adobe Fan Heiti Std B", Font.PLAIN, 14));
-	    lblNewLabel.setBackground(Color.WHITE);
-	    lblNewLabel.setForeground(Color.WHITE);// Set text color to white for visibility
+	    lblNewLabel.setBackground(Color.BLACK);
+	    lblNewLabel.setForeground(Color.BLACK);// Set text color to white for visibility
 	    lblNewLabel.setBounds(20, 11, 141, 129);// Set position and size of the label
 	    frame.getContentPane().add(lblNewLabel); // Add the label to the frame
+	    
+		//background picture(flowers)
+	    JLabel image_hintergrund_Bild = new JLabel("hintergrund_Bild");
+	    image_hintergrund_Bild.setIcon(new ImageIcon(Interface.class.getResource(image_path))); // Load the image icon
+	    image_hintergrund_Bild.setBounds(0, 0, 2082, 1061);// Set position and size for the background
+	    frame.getContentPane().add(image_hintergrund_Bild);
+	    
+	    JButton btnNewButton_1 = new JButton("New button");
+	    btnNewButton_1.setBounds(51, 222, 85, 21);
+	    frame.getContentPane().add(btnNewButton_1);
 	    
 	    // the main menu button(Hauptmenue)
 	    JButton btnNewButton = new JButton("Zum Hauptmenue");
 	    btnNewButton.setBackground(Color.PINK);
 	    btnNewButton.setFont(new Font("Arial Black", Font.PLAIN, 14));
-	    btnNewButton.setBounds(30, 305, 167, 41);
+	    btnNewButton.setBounds(10, 370, 167, 41);
 	    frame.getContentPane().add(btnNewButton);
-	    
-		//background picture(flowers)
-	    JLabel image_hintergrund_Bild = new JLabel("hintergrund_Bild");
-			image_hintergrund_Bild.setIcon(new ImageIcon(Interface.class.getResource(image_path))); // Load the image icon
-	        image_hintergrund_Bild.setBounds(0, 0, 2082, 1061);// Set position and size for the background
-	        frame.getContentPane().add(image_hintergrund_Bild);// Add the background image to the frame
 	        
 	     
 	}
