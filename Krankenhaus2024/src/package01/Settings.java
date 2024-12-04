@@ -72,7 +72,6 @@ public class Settings {
 		frame.setVisible(true);
 		frame.setLocationRelativeTo(null);
 		frame.getContentPane().setLayout(null);
-
         image_hospital_plan = new JLabel("hospital_plan");
         image_hospital_plan.setIcon(new ImageIcon(Interface.class.getResource(image_path)));
         image_hospital_plan.setBounds(621, 256, 657, 464);
