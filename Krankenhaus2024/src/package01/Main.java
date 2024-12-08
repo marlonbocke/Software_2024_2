@@ -14,9 +14,9 @@ public class Main {
 
             // Start the login window
             //Anmeldung.main(args);
-        } catch (SQLException e) {
-            e.printStackTrace();
-            System.out.println("Failed to initialize database: " + e.getMessage());
+        } catch (SQLException hello) {
+            hello.printStackTrace();
+            System.out.println("Failed to initialize database: " + hello.getMessage());
         }
     }
 

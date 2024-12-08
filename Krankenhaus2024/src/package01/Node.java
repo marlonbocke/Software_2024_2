@@ -248,5 +248,4 @@ public class Node {
     }
 }
 
-
 //currentProblem: goal point will not insert in node and that's why the algorithms didn't work if you enter a none node point. --problem solved
