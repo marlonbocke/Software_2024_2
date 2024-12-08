@@ -142,7 +142,6 @@ public class Interface {
         int[][] testPositions = {{50, 50}, {200, 200}, {300, 300}, {350, 350}};
         drawingPanel.setPositionsArray(testPositions);
     }
-
 }
 
 
