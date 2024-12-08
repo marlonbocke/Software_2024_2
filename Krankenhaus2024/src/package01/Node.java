@@ -95,7 +95,7 @@ public class Node {
 			int[][] positionsArray = new int[path.size()][2];
             for (Node node : path) {
               
-               System.out.println(Arrays.toString(node.position)); 
+              // System.out.println(Arrays.toString(node.position)); 
               
                positionsArray[i][0] = node.position[0];  // X-Koordinate
                positionsArray[i][1] = node.position[1];  // Y-Koordinate
@@ -116,9 +116,9 @@ public class Node {
 //           }
 
 //         positionsArray = positions.toArray(new int[positions.size()][]);
-         DrawingPanel DrawingPanel = new DrawingPanel();
-         DrawingPanel.setPositionsArray(positionsArray);            
-
+//         DrawingPanel DrawingPanel = new DrawingPanel();
+//         DrawingPanel.setPositionsArray(positionsArray);            
+//         System.out.println("Is completed.");
             
                                  
         } else {
