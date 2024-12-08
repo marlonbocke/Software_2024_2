@@ -91,6 +91,7 @@ public class Anmeldung {
         	public void actionPerformed(ActionEvent e) {
         		
         		new Interface();
+        		frame.setVisible(false);
  
         	}
         });

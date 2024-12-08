@@ -99,10 +99,7 @@ public class Interface {
             }
         });
         
-        
-        
-        
-        
+                 
         JButton btnKonfiguration = new JButton("Konfiguration");
         btnKonfiguration.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent e) {
