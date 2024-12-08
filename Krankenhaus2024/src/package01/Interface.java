@@ -99,7 +99,10 @@ public class Interface {
             }
         });
         
-                 
+        
+        
+        
+        
         JButton btnKonfiguration = new JButton("Konfiguration");
         btnKonfiguration.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent e) {
@@ -142,6 +145,5 @@ public class Interface {
         int[][] testPositions = {{50, 50}, {200, 200}, {300, 300}, {350, 350}};
         drawingPanel.setPositionsArray(testPositions);
     }
+
 }
-
-
