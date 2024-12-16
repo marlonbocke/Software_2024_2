@@ -21,7 +21,6 @@ import java.awt.Font;
 public class Main_window {
 
     JFrame frame;
-    private JTextField textField_currentroom;
     private JTextField textfield_destination_room;
     private String image_path = "/package01/hospital_plan.png";
     private JLabel image_hospital_plan;
@@ -39,6 +38,9 @@ public class Main_window {
    
     private  boolean  setkoordinates = false;
     
+    
+    private JLabel current_room;   
+    private JLabel destination_room;
     
     public static void main(String[] args) {
         EventQueue.invokeLater(new Runnable() {
@@ -70,9 +72,18 @@ public class Main_window {
         frame.getContentPane().add(drawingPanel);
 
         
-       
+    	current_room = new JLabel("Startpunkt");
+        current_room.setBounds(98, 186, 182, 21);
+        frame.getContentPane().add(current_room);
 
-      
+        
+        destination_room = new JLabel("Zielpunkt------------------");
+        destination_room.setBounds(109, 217, 171, 21);
+        frame.getContentPane().add(destination_room);
+
+
+        current_room.setVisible(false);
+        destination_room.setVisible(false);
         
         
         JButton button_start_search = new JButton("Suche Starten");
@@ -122,33 +133,18 @@ public class Main_window {
         image_hospital_plan.setBounds(342, 93, 657, 464);
         frame.getContentPane().add(image_hospital_plan);
 
-//        int x = image_hospital_plan.getBounds().x;
-//        int y = image_hospital_plan.getBounds().y;
-//        int width = image_hospital_plan.getWidth();
-//        int height = image_hospital_plan.getHeight();
-//        System.out.println("X-Koordinate: " + x);
-//        System.out.println("Y-Koordinate: " + y);
-//        System.out.println("Breite: " + width);
-//        System.out.println("Höhe: " + height);
+       
+//        JLabel current_room=current_room = new JLabel("-");
+//     current_room.setBounds(89, 132, 131, 21);
+//     frame.getContentPane().add(current_room);
 
         
         
-        textField_currentroom = new JTextField();
-        textField_currentroom.setBounds(174, 168, 109, 20);
-        frame.getContentPane().add(textField_currentroom);
-        textField_currentroom.setColumns(10);
-
-        JLabel current_room = new JLabel("Aktuelle Position"+get_sX);
-        current_room.setBounds(89, 132, 131, 21);
-        frame.getContentPane().add(current_room);
-
-        JLabel destination_room = new JLabel("Ziel Raum");
-        destination_room.setBounds(89, 155, 67, 21);
-        frame.getContentPane().add(destination_room);
-
+        
+       
         textfield_destination_room = new JTextField();
         textfield_destination_room.setColumns(10);
-        textfield_destination_room.setBounds(174, 256, 109, 20);
+        textfield_destination_room.setBounds(196, 351, 109, 20);
         frame.getContentPane().add(textfield_destination_room);
         
         JLabel lblNewLabel = new JLabel("HospitalMaps");
@@ -157,11 +153,26 @@ public class Main_window {
         frame.getContentPane().add(lblNewLabel);
 
         
+        JLabel pointLabel = new JLabel();
+        pointLabel.setOpaque(true);
+        pointLabel.setBackground(Color.RED); // Punktfarbe
+        pointLabel.setSize(10, 10); // Punktgröße
+        pointLabel.setVisible(false);
+        image_hospital_plan.add(pointLabel);
         
-        textField_currentroom.setVisible(false);
         
         
         
+        JLabel pointLabel2 = new JLabel();
+        pointLabel2.setOpaque(true);
+        pointLabel2.setBackground(Color.RED); // Punktfarbe
+        pointLabel2.setSize(10, 10); // Punktgröße
+        pointLabel2.setVisible(false);
+        image_hospital_plan.add(pointLabel2);
+        
+        
+        
+       
                
         image_hospital_plan.addMouseListener(new MouseAdapter() {
             public void mousePressed(MouseEvent e) {
@@ -172,29 +183,57 @@ public class Main_window {
             		  get_sX = e.getX();
                       get_sY = e.getY();
                  	System.out.println("Maus bewegt: X = " + get_sX + ", Y = " + get_sY);
-                 	textField_currentroom.setVisible(true);
+                 	 current_room.setVisible(true);
+                 	current_room.setText("Startpunkt gesetzt: "+get_sX+""+get_sY);
+                 
+                 	// current_room = new JLabel("Aktuelle Position:"+ get_sX +""+get_sY);            	
+                 	//current_room .setVisible(true);
+                 	
+                 	  pointLabel.setLocation(get_sX - pointLabel.getWidth() / 2, get_sY - pointLabel.getHeight() / 2);
+                      pointLabel.setVisible(true);
+                 	
             		 isSetstart = false;
                    	            			
             	} else {
             		            		
             	get_gX = e.getX();
             	get_gY = e.getY();
-            	System.out.println("Maus bewegt: X = " + get_gX + ", Y = " + get_gY); 
-            	button_start_search.setVisible(true); 
+            	
+            	
+            	
+            	
+            	System.out.println("Maus bewegt: X = " + get_gX + ", Y = " + get_gY);
+            	button_start_search.setVisible(true);
+            	  destination_room.setVisible(true);
+            	  destination_room.setText("Zielpunkt gesetzt: "+get_gX+""+get_gY);           	
+            	  pointLabel2.setLocation(get_gX - pointLabel2.getWidth() / 2, get_gY - pointLabel2.getHeight() / 2);
+                  pointLabel2.setVisible(true);
+             	
+            	  
+                 	  
             }    
             	
             	
             }
         });
 
+        
+     	
+     	
+     	//current_room.setText(get_sX+""+get_sY);
+        
+        
+        destination_room.setText(get_gX+""+get_gY);
+
+        
         JButton button_reset = new JButton("Zurücksetzen");
         button_reset.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent e) {
         		isSetstart=true;
         		int[][] positionsArray=null;
                 button_start_search.setVisible(false);
-
-        	
+                pointLabel2.setVisible(false);
+                pointLabel.setVisible(false);
         		drawingPanel.setPositionsArray(positionsArray);
         	}
         });
