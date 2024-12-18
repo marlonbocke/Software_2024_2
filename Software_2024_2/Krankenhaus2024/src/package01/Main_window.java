@@ -54,10 +54,17 @@ public class Main_window {
     private JLabel current_room;   
     private JLabel destination_room;
     
+    
+    private JLabel pointLabel;
+    private JLabel pointLabel2;
+    
+    
+    
     JButton button_commit;
     
      private JLabel label_4;
      private JLabel label_5;
+    
     
     public static void main(String[] args) {
         EventQueue.invokeLater(new Runnable() {
@@ -94,7 +101,7 @@ public class Main_window {
         frame.getContentPane().add(current_room);
 
         
-        destination_room = new JLabel("Zielpunkt------------------");
+        destination_room = new JLabel("Zielpunkt");
         destination_room.setBounds(283, 268, 171, 21);
         frame.getContentPane().add(destination_room);
 
@@ -117,6 +124,34 @@ public class Main_window {
                 
                 if (positionsArray == null) {
                     JOptionPane.showMessageDialog(frame, "Kein Pfad gefunden");
+                    
+                    
+                    
+                    
+                    button_start_search.setVisible(false);
+                    pointLabel2.setVisible(false);
+                    pointLabel.setVisible(false);
+                    
+                    textfield_destination_room.setVisible(false);
+                    label_4.setVisible(false);
+                    destination_room.setVisible(false);
+                    current_room.setVisible(false);
+                    label_5.setVisible(true);
+                    button_commit.setVisible(false);
+                    get_sX=0;
+                    get_sY=0;
+                    get_gX=0;
+                    get_gY=0;
+                    
+                     positionsArray=null;
+                     isSetstart=true;
+                    drawingPanel.setPositionsArray(positionsArray);
+                    
+                    
+                    
+                    
+                    
+                    
                 } else {
                     // Erfolgreiches Ergebnis verarbeiten
                     drawingPanel.setPositionsArray(positionsArray);
@@ -127,30 +162,14 @@ public class Main_window {
         button_start_search.setBounds(333, 412, 121, 40);
         frame.getContentPane().add(button_start_search);
         button_start_search.setVisible(false);
-      
-//        while(setkoordinates==false)
-//        {
-//        	 	
-//            button_start_search.setVisible(false);
-//             
-//
-//        }
-//        button_start_search.setVisible(true);
-               
+                     
         
         image_hospital_plan = new JLabel("hospital_plan");
         image_hospital_plan.setIcon(new ImageIcon(Main_window.class.getResource("/package01/hospital_plan.png")));
         image_hospital_plan.setBounds(494, 93, 657, 464);
         frame.getContentPane().add(image_hospital_plan);
 
-       
-//        JLabel current_room=current_room = new JLabel("-");
-//     current_room.setBounds(89, 132, 131, 21);
-//     frame.getContentPane().add(current_room);
-
-        
-        
-        
+         
        
         textfield_destination_room = new JTextField();
         textfield_destination_room.setColumns(10);
@@ -163,20 +182,20 @@ public class Main_window {
         frame.getContentPane().add(lblNewLabel);
 
         
-        JLabel pointLabel = new JLabel();
+        pointLabel = new JLabel();
         pointLabel.setOpaque(true);
-        pointLabel.setBackground(Color.BLUE); // Punktfarbe
-        pointLabel.setSize(10, 10); // Punktgröße
+        pointLabel.setBackground(Color.BLUE); 
+        pointLabel.setSize(10, 10); 
         pointLabel.setVisible(false);
         image_hospital_plan.add(pointLabel);
         
         
         
         
-        JLabel pointLabel2 = new JLabel();
+        pointLabel2 = new JLabel();
         pointLabel2.setOpaque(true);
-        pointLabel2.setBackground(Color.RED); // Punktfarbe
-        pointLabel2.setSize(10, 10); // Punktgröße
+        pointLabel2.setBackground(Color.RED); 
+        pointLabel2.setSize(10, 10); 
         pointLabel2.setVisible(false);
         image_hospital_plan.add(pointLabel2);
         
@@ -215,7 +234,7 @@ public class Main_window {
                     	
                         button_start_search.setVisible(true);
                   	  destination_room.setVisible(true);
-                  	  destination_room.setText("Zielpunkt gesetzt: "+get_gX+""+get_gY);           	
+                  	  destination_room.setText("Zielpunkt gesetzt: "+get_gX+", "+get_gY);           	
                   	  pointLabel2.setLocation(get_gX - pointLabel2.getWidth() / 2, get_gY - pointLabel2.getHeight() / 2);
                         pointLabel2.setVisible(true);
                    	
@@ -244,9 +263,7 @@ public class Main_window {
         button_commit.setBounds(333, 361, 121, 40);
         frame.getContentPane().add(button_commit);
 
-        
-
-        
+       
 
         textfield_destination_room.setVisible(false);
         label_4.setVisible(false);
@@ -263,17 +280,9 @@ public class Main_window {
                                                 			  
                   
                      System.out.println("Maus bewegt: X = " + get_sX + ", Y = " + get_sY);
-                      	 current_room.setVisible(true);
-                      	current_room.setText("Akuelle Postion: "+get_sX+""+get_sY);
-                      	
-                       
-                    
-            		
-            		// System.out.println("isSetstart true");
-            		  
-                 	// current_room = new JLabel("Aktuelle Position:"+ get_sX +""+get_sY);            	
-                 	//current_room .setVisible(true);
-                 	
+                     current_room.setVisible(true);
+                     current_room.setText("Akuelle Postion: "+get_sX+", "+get_sY);
+                	
                  	  pointLabel.setLocation(get_sX - pointLabel.getWidth() / 2, get_sY - pointLabel.getHeight() / 2);
                       pointLabel.setVisible(true);
                       textfield_destination_room.setVisible(true);
@@ -287,14 +296,12 @@ public class Main_window {
             		            		
             	get_gX = e.getX();
             	get_gY = e.getY();
-            	
-            	
-            	            	           	
+            	 	            	           	
             	
             	System.out.println("Maus bewegt: X = " + get_gX + ", Y = " + get_gY);
             	button_start_search.setVisible(true);
             	  destination_room.setVisible(true);
-            	  destination_room.setText("Zielpunkt gesetzt: "+get_gX+""+get_gY);           	
+            	  destination_room.setText("Zielpunkt gesetzt: "+get_gX+", "+get_gY);           	
             	  pointLabel2.setLocation(get_gX - pointLabel2.getWidth() / 2, get_gY - pointLabel2.getHeight() / 2);
                   pointLabel2.setVisible(true);
              	
@@ -305,13 +312,7 @@ public class Main_window {
                         	
             }
         });
-    	
-     	//current_room.setText(get_sX+""+get_sY);
-        
-        
-        destination_room.setText(get_gX+""+get_gY);
-
-        
+    	           
         JButton button_reset = new JButton("Zurücksetzen");
         button_reset.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent e) {
