@@ -1,6 +1,11 @@
-package package01;
+package package01.controller;
 
 import javax.swing.*;
+
+import package01.view.Main.DatabaseManager;
+import package01.view.Main_window;
+import package01.view.Settings;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -119,7 +124,8 @@ public class Anmeldung {
                 // and open the corresponding window or perform further actions
                 
                 frame.setVisible(false);
-        		new Settings();
+                Settings roadManager = new Settings();
+                roadManager.setVisible(true);
                 
                 
                 

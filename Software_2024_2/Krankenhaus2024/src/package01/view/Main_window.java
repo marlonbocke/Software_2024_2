@@ -1,4 +1,4 @@
-package package01;
+package package01.view;
 
 import java.awt.BasicStroke;
 import java.awt.Color;
@@ -21,8 +21,16 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-import java.awt.Font;
 
+import package01.controller.Anmeldung;
+import package01.model.Node;
+import package01.view.Main.DatabaseManager;
+import package01.model.Node;
+import package01.controller.Anmeldung;
+
+
+import java.awt.Font;
+import package01.model.Node;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -153,7 +161,7 @@ public class Main_window {
                     
                     
                 } else {
-                    // Erfolgreiches Ergebnis verarbeiten
+                   
                     drawingPanel.setPositionsArray(positionsArray);
                 } 
                // drawingPanel.setPositionsArray(positionsArray);
