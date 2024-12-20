@@ -6,26 +6,6 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.time.LocalDate;
 
-public class Main {
-//    public static void main(String[] args) {
-//        try {
-//            // Initialize the database and create initial permission classes
-//            initializeDatabase();
-//
-//            // Start the login window
-//          //  Anmeldung.main(args);
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//            System.out.println("Failed to initialize database: " + e.getMessage());
-//        }
-//    }
-//
-//    private static void initializeDatabase() throws SQLException {
-//        DatabaseManager.createPermissionClass("Admin", "Full access permissions", "1234", "Admin");
-//        DatabaseManager.createPermissionClass("Mitarbeiter", "Mitarbeiter permissions", "45678", "Mitarbeiter");
-//        DatabaseManager.createPermissionClass("Kunde", "Kunde permissions", "98765", "Kunde");
-//    }
-//}
 
    public class DatabaseManager {
     private static final String DB_URL = "jdbc:mysql://marlonbockelmann.ddns.net:3306/password";
@@ -48,4 +28,4 @@ public class Main {
         }
     }
    }
-}
+
